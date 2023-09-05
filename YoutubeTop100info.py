@@ -37,7 +37,7 @@ for id in channal_id[1:]:#從第1個channal_id開始,可自行調整從第幾個
                 except:
                     df.to_excel(writer,sheet_name='發布影片')
             break
-    df = pd.DataFrame(table)#檔案清空
+    df = pd.DataFrame(table)
 
 # #---------------------------------------爬取指定頻道的資訊---------------------------------------#
         
@@ -56,4 +56,4 @@ for id in channal_id[1:]:#從第1個channal_id開始,可自行調整從第幾個
                 "總觀看次數":float(soup.find_all("tbody")[0].find_all("tr")[y].find_all("td")[2].find_all("span")[0].text[:-1])*10000000,
                 "觀看成長量":a},ignore_index=True)     
     df.to_excel("S:\\TaiwanSubTop100\\Top100info\\"+channal_name[channal_id.index(id)]+".xlsx")
-    df = pd.DataFrame(table)#檔案清空
+    df = pd.DataFrame(table)
